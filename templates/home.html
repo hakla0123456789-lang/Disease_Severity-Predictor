@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Diagnosis Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(180deg,#eef7ff,#ffffff);
+      padding: 30px;
+    }
+    .card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-top: 6px solid #1976d2;
+    }
+    h1 { color: #1976d2; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    input, select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+    }
+    .btn:hover { background: #145a9e; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Health Diagnosis Predictor</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+      <div class="grid">
+        <input type="text" name="Age" placeholder="Age">
+        <input type="text" name="Heart_Rate_bpm" placeholder="Heart Rate (bpm)">
+        <input type="text" name="Body_Temperature_C" placeholder="Body Temperature (°C)">
+        <input type="text" name="Oxygen_Saturation_%" placeholder="Oxygen Saturation (%)">
+        <select name="Gender_Male">
+          <option value="">Select Gender</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+        <input type="text" name="Systolic" placeholder="Systolic">
+        <input type="text" name="Diastolic" placeholder="Diastolic">
+        <select name="Body ache">
+          <option value="">Body ache?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Cough">
+          <option value="">Cough?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Fatigue">
+          <option value="">Fatigue?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Fever">
+          <option value="">Fever?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Headache">
+          <option value="">Headache?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Runny nose">
+          <option value="">Runny nose?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Shortness of breath">
+          <option value="">Shortness of breath?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <select name="Sore throat">
+          <option value="">Sore throat?</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
+

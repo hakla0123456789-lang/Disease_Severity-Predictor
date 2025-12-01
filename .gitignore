@@ -1,0 +1,32 @@
+# Ignore virtual environment
+venv/
+ENV/
+env/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment variables
+.env
+
+# Ignore model files unless needed
+*.pkl
+*.joblib
+
+# Ignore system/editor junk
+.vscode/
+.idea/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
